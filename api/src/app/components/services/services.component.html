@@ -1,0 +1,106 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <h1>Booking</h1>
+            <form (ngSubmit)="bookingData()">
+                <div class="form-group">
+                    <label for="name">Enter Name:</label>
+                    <input type="text" name="name" id="name"
+                        class="form-control" [(ngModel)]="booking.name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Email:</label>
+                    <input type="email" name="email" id="Email"
+                        class="form-control" [(ngModel)]="booking.email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Phone:</label>
+                    <input type="email" name="phone" id="Phone"
+                        class="form-control" [(ngModel)]="booking.phone">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Address:</label>
+                    <textarea name="address" id="address"
+                        class="form-control" [(ngModel)]="booking.address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter City:</label>
+                    <input type="city" name="city" id="city"
+                        class="form-control" [(ngModel)]="booking.city">
+                </div>
+                <div class="form-group">
+                    <label for="name">select category:</label>
+                    <select class="form-control" name="cat"
+                        [(ngModel)]="booking.cat">
+                        <option disabled>Select category</option>
+                        <option>Delux room</option>
+                        <option>Single Room</option>
+                        <option>Couple room</option>
+                        <option>Family Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter No of Room</label>
+                    <input type="number" name="num" id="num"
+                        class="form-control" [(ngModel)]="booking.no">
+                </div>
+
+                <button class="form-control bg-danger text-light mt-4 mb-4">Book
+                    a Room</button>
+            </form>
+            <span id="response" class="">{{data3}}</span>
+        </div>
+    </div>
+</div>
+<div class="container p-5">
+    <div class="row">
+
+        <div class="col-sm-12 mx-auto">
+            <h1 class="text-center">Booking Table</h1>
+            <table width="100%" class="table bg-light">
+                <tr>
+                    <td>Sno</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                    <td>Address</td>
+                    <td>City</td>
+                    <td>Category</td>
+                    <td>No of Room</td>
+                    <td>update</td>
+                    <td>delete</td>
+                </tr>
+                <tr *ngFor="let obj of dataArr">
+                    <td scope="row">{{obj.id}}</td>
+                    <td>
+                        {{obj.name}}
+                    </td>
+                    <td>{{obj.email}}
+
+                    </td>
+                    <td>{{obj.phone}}
+
+                    </td>
+                    <td>{{obj.address}}
+
+                    </td>
+                    <td>{{obj.city}}
+
+                    </td>
+                    <td>{{obj.cat}}
+
+                    </td>
+                    <td>{{obj.no}}
+
+                    </td>
+                    <td><button class="btn
+                            btn-primary"
+                            routerLink="/update_booking/{{obj.id}}">Edit</button></td>
+                    <td><button class="btn
+                            btn-danger" (click)="deleteBooking(obj.id)">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

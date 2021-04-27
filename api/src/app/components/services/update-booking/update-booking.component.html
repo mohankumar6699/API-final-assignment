@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mx-auto">
+            <h1 class="text-center">Update Category</h1>
+            <form (ngSubmit)="updateBooking()">
+                <div class="form-group">
+                    <label for="name">Enter Name:</label>
+                    <input type="text" name="name" id="name"
+                        class="form-control" value="{{booking.name}}"
+                        [(ngModel)]="booking.name">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter email:</label>
+                    <input type="text" name="email" id="email"
+                        class="form-control" value="{{booking.email}}"
+                        [(ngModel)]="booking.email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Phone:</label>
+                    <input type="email" name="phone" id="Phone"
+                        class="form-control" value="{{booking.phone}}"
+                        [(ngModel)]="booking.phone">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Address:</label>
+                    <textarea name="address" id="address"
+                        class="form-control" value="{{booking.address}}"
+                        [(ngModel)]="booking.address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter City:</label>
+                    <input type="city" name="city" id="city"
+                        class="form-control" value="{{booking.city}}"
+                        [(ngModel)]="booking.city">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter category:</label>
+                    <select class="form-control" name="cat"
+                        [(ngModel)]="booking.cat">
+                        <option disabled>Select category</option>
+                        <option>Couple Room</option>
+                        <option>Single Room</option>
+                        <option>Delax Room</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter no of rooms:</label>
+                    <input type="text" name="no" id="no"
+                        class="form-control" value="{{booking.no}}"
+                        [(ngModel)]="booking.no">
+                </div>
+                <button class="form-control bg-danger text-light mt-4 mb-4">update
+                    booking</button>
+                <span>{{data3}}</span>
+            </form>
+        </div>
+    </div>
+</div>
